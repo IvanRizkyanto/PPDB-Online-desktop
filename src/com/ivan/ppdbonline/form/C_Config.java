@@ -20,7 +20,7 @@ public class C_Config {
     
     public void config() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_ppdbapps?true&serverTimezone=UTC", "root", "");
             stmt = conn.createStatement();
         } catch (Exception e) {
@@ -33,7 +33,7 @@ public class C_Config {
             String url = "jdbc:mysql://localhost:3306/db_ppdbapps?true&serverTimezone=UTC";
             String user = "root";
             String pass = "";
-            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             conn = DriverManager.getConnection(url, user, pass);
         } catch (Exception e) {
             System.err.println("Koneksi gagal "+ e.getMessage());
